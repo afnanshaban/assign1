@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" Content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    </head>
+    <body>
+        <h1>User Registration</h1>
+
+        <form action="/register" method="POST" enctype="multipart/form-data">
+        
+        <!-- ======================================= -->
+        <!-- TODO 1: Personal Information -->
+        <!-- ======================================= -->
+
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <!-- Full Name -->
+                 <label for="fullname">full Name:</label>
+                 <input type="text" id="fullname" name="fullname" required minlength="3">
+                 <br><br>
+
+                   <!-- Email -->
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br><br>
+
+                    <!-- Password -->
+                     <label for="password">Password:</label>
+                     <input type="password" id="password" name="password" required minlength="8">
+                     <br><br>
+
+                     <!-- Confirm Password -->
+                      <label for="confirm-password">Confirm Password:</label>
+                      <input type="password" id="confirm-password" name="confirm-password" required minlength="8">
+                      <br><br>
+
+                      <!-- Date of Birth -->
+                       <label for="dob">Date of Birth:</label>
+                       <input type="date" id="dob" name="dob" required>
+
+            </fieldset>
+
+            <br>
+
+        <!-- ======================================= -->
+        <!-- TODO 2: Contact Information -->
+        <!-- ======================================= -->
+
+            <fieldset>
+                <legend>Contact Information</legend>
+
+                <!-- Phone -->
+                 <label for="phone">phone:</label>
+                 <input type="tel" id="phone" name="phone"
+                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                 title="format: 059-123-4567">
+                 <br><br>
+
+                 <!-- Address -->
+                  <label for="address">Address:</label>
+                  <br>
+                  <textarea id="address" name="address" rows="3" cols="40"></textarea>
+                  <br><br>
+
+                  <!-- City -->
+                   <label for="city">city:</label>
+                   <select id="city" name="city">
+                    <option value="gaza">Gaza</option>
+                    <option value="khan younis">Khan Younis</option>
+                    <option value="rafah">Rafah</option>
+                    <option value="Dier al-Balah">Dier al-Balah</option>
+                    <option value="Jabalia">Jabalia</option>
+                   </select>
+
+            </fieldset>
+            <br>
+
+        <!-- ======================================= -->
+        <!-- TODO 3: Preferences -->
+        <!-- ======================================= -->
+<fieldset>
+    <legend>Preferences</legend>
+    <!-- Gender (Radio Buttons) -->
+     <p>Gender:</p>
+
+     <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <br><br>
+
+        <!-- Interests (Checkboxes) -->
+         <p>Interests:</p>
+         <input type="checkbox" id="coding" name="interests" value="coding">
+         <label for="coding">Coding</label>
+         <br>
+
+         <input type="checkbox" id="design" name="interests" value="design">
+         <label for="design">Design</label>
+         <br>
+         
+         <input type="checkbox" id="gaming" name="interests" value="gaming">
+         <label for="gaming">Gaming</label>
+         <br>
+
+
+         <input type="checkbox" id="reading" name="interests" value="reading">
+            <label for="reading">Reading</label>
+            <br>
+            
+         <input type="checkbox" id="sports" name="interests" value="sports">
+         <label for="sports">Sports</label>
+
+         <br><br>
+
+         <!-- Skill Level (Range) -->
+          <label for="skill">Skill Level (1-10):</label>
+          <input type="range" id="skill" name="skill" min="1" max="10" value="5">
+
+
+</fieldset>
+
+<br>
+
+<!-- ======================================= -->
+<!-- TODO 4: Profile Picture -->
+<!-- ======================================= -->
+
+<label for="profile-picture">Profile Picture:</label>
+<input type="file" id="profile-picture" name="profile-picture" accept="image/*">
+
+<br><br>
+
+<!-- ======================================= -->
+<!-- TODO 5: Terms and Buttons -->
+<!-- ======================================= -->
+
+<!-- Terms and Conditions (Required) -->
+ <input type="checkbox" id="terms" name="terms" required>
+ <label for="terms">I agree to the Terms and Conitions</label>
+
+ <br><br>
+
+ <!-- Submit Button -->
+<button type="submit">Register</button>
+
+<!-- Reset Button -->
+ <button type="reset">Clear Form</button>
+
+            
+        </form>
+
+</body>
+</html>
