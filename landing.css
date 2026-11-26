@@ -1,0 +1,318 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    direction: rtl;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* TODO 1: Navbar - Flexbox */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 8%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgb(0, 0, 0, 0.08);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: #334155;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+/* TODO 2: Hero Section - Flexbox */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 100px 20px 40px;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+}
+
+.hero-contect {
+    max-width: 750px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #475569;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #2563eb;
+    border: 1px solid #2563eb;
+}
+
+.btn-primary:hover {
+    background-color: #eff6ff;
+}
+
+/* TODO 3: Features - CSS Grid */
+
+.features {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.features h2{
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.section-descreption {
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px; 
+}
+
+.features-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 05);
+    transition: transform 0.3s;
+}
+
+.features-card:hover {
+    transform: translateY(-5px);
+}
+
+.features-card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.features-card h3 {
+    margin-bottom: 10px;
+    color: #2563eb;
+}
+
+/* TODO 4: Testimonials - Flexbox */
+
+.testimonials {
+    padding: 80px 8%;
+    background-color: #eaf2ff;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.testimonials-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.testimonials-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    flex: 1 1 280px;
+    max-width: 350px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 05);
+
+    .testimonials-card p {
+        margin-bottom: 20px;
+    }
+
+    .testimonials-card img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .customer-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .customer-info div {
+        text-align: right;
+    }
+
+    .customer-info h4 {
+        font-size: 16px;
+    }
+
+    .customer-info span {
+        font-size: 14px;
+        color: #64748b;
+    }
+
+    /* TODO 5: Footer - CSS Grid */
+
+    .footer {
+        background-color: #0f172a;
+        color: white;
+        padding: 60px 8% 20px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .footer h3 {
+        margin-bottom: 20px;
+        color: #93c5fd;
+    }
+
+    .footer ul {
+        list-style: none;
+    }
+
+    .footer li {
+        margin-bottom: 10px;
+    }
+
+    .footer a {
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .footer a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        border-top: 1px solid #334155;
+        margin-top: 35px;
+        padding-top: 20px;
+    }
+
+    /* Responsive Design */
+
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 15px 5%;
+        }
+
+        .nav-links {
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+        }
+
+        .hero p {
+            font-size: 17px;
+        }
+
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+    @media (max-width: 480px) {
+        .navbar {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-links {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
