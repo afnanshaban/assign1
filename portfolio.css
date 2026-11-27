@@ -1,0 +1,543 @@
+/* =========================
+   TODO 1: CSS VARIABLES
+========================= */
+
+:root {
+    --pimary: #4caf50;
+    --bg-dark: #0f0f1a;
+    --bg-card: #1a1a2e;
+    --text:#e0e0e0;
+    --radius: 12px;
+    --transition: all 0.3s ease;
+
+    --spacing: 20px;
+    --section-padding: 80px;
+}
+
+/* =========================
+   GENERAL STYLES
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    direction: rtl;
+    background-color: var(--bg-dark);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    padding: var(--section-padding);
+}
+
+section h2 {
+    text-align: center;
+    color: var(--primary);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section subtitle {
+    text-align: center;
+    color: #a7a7b8;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   TODO 2: NAVBAR
+========================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 8%;
+    background-color: #151525;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(76, 175, 80, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    color: var(--text);
+    position: relative;
+    transition: var(--transition);
+}
+
+/* Animated underline */
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+
+    bottom: -6px;
+    right: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--primary);
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* =========================
+   TODO 3: HERO SECTION
+========================= */
+
+.hero-section {
+    min-height: 85vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: 
+    radial-gradient(circle at top, rgba(76, 175, 80, 0.12), transparent 50%),
+    var(--bg-dark);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content > p:first-child {
+    color: var(--primary);
+    font-size: 22px;
+
+    animation: fadeInUp 0.8s ease both;
+}
+
+.hero-content h1 {
+    font-size: 70px;
+    color: white;
+    margin: 10px 0;
+
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero-content h2 {
+    font-size: 28px;
+    color: var(--primary);
+    margin-bottom: 20px;
+
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-content p {
+    color: #b8b8c8;
+    font-size: 18px;
+
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: 30px;
+
+    animation: fadeInUp 0.8s ease 0.8s both;
+}
+
+/* Hero buttons */
+
+.btn {
+    display: inline-block;
+
+    background-color: var(--primary);
+    color: white;
+
+    padding: 12px 28px;
+    border-radius: var(--radius);
+
+    transition: var(--transition);
+    border: 2px solid var(--primary);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 20px rgba(76, 175, 80, 0.3);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Animation */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   TODO 4: SKILLS SECTION
+========================= */
+
+.skills-section {
+    background-color: #131321;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.skill-card {
+    background-color: var(--bg-card);
+
+    padding: 30px 20px;
+    text-align: center;
+
+    border: 1px solid rgba(76, 175, 80, 0.1);
+    border-radius: var(--radius);
+
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.25);
+
+    border-color: var(--primary);
+}
+
+.skill-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+
+    transition: var(--transition);
+}
+
+.skill-card:hover .skill-icon {
+    transform: translateY(-5px);
+}
+
+.skill-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.skill-card p {
+    color: #b8b8c8;
+    font-size: 14px;
+}
+
+/* =========================
+   TODO 5: PROJECTS SECTION
+========================= */
+
+.projects-section {
+    background-color: var(--bg-dark);
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px
+}
+
+.project-card {
+    position: relative;
+
+    height: 280px;
+    overflow: hidden;
+
+    border-radius: var(--radius);
+    background-color: var(--bg-card);
+
+    transition: var(--transition);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+/* Project overlay */
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(15, 15, 26, 0.92);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 20px;
+
+    opacity: 0;
+    transition: var(--transition);
+
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-overlay h3 {
+    color: var(--primary);
+    font-size: 22px;
+    margin-bottom: 10px;
+
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+.project-overlay p {
+    color: var(--text);
+    margin-bottom: 20px;
+
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+.project-card:hover .project-overlay h3,
+.project-card:hover .project-overlay p {
+    transform: translateY(0);
+}
+
+.project-btn {
+    background-color: var(--primary);
+    color: white;
+
+    padding: 10px 25px;
+    border-radius: 8px;
+
+    transition: var(--transition);
+}
+
+.project-btn:hover {
+    background-color: #388e3c;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   TODO 6: CONTACT SECTION
+========================= */
+
+.cotact-section {
+    background-color: #131321;
+    text-align: center;
+}
+
+.cotact-section > p {
+    color: #b8b8c8;
+    margin-bottom: 30px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-links a {
+    background-color: var(--bg-card);
+
+    padding: 12px 25px;
+    border-radius: var(--radius);
+
+    border: 1px solid rgba(76, 175, 80, 0.2);
+
+    transition: var(--transition);
+}
+
+.contact-links a:hover {
+    background-color: var(--primary);
+    color: white;
+
+    transform: translateY(-5px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+
+    padding: 25px 15px;
+
+    background-color: #0b0b14;
+    color: #9999aa;
+
+    border-top: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px){
+
+    :root {
+        --section-padding: 60px 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 15px 20px;
+
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero-section{
+        min-height: 75vh;
+    }
+
+    .hero-content h1 {
+        font-size: 50px;
+    }
+
+    .hero-content h2 {
+        font-size: 22px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        height: 250px;
+    }
+
+    .section h2 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        font-size: 14px;
+    }
+}
+
+/* Accessibility: reduce motion */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
